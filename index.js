@@ -7,6 +7,7 @@ import morgan from "morgan";
 import helmet from "helmet";
 import userRoute from "./routes/users.js";
 import authRoute from "./routes/auth.js";
+import postRoute from "./routes/posts.js";
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ app.use(helmet());
 app.use(morgan("common"));
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
+app.use("/api/posts", postRoute);
 
 app.get("/", (req, res) => {
   res.send("welcome to homepage");
